@@ -1,2 +1,2 @@
 # PhD_manuscript
-Upcoming repository for my PhD manuscript 🎉🎉🎉
+Repository for storing the tex files for my PhD thesis
