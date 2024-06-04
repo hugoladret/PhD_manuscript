@@ -1,0 +1,72 @@
+\documentclass[french]{amu_these}
+\begin{document}
+
+										
+	\input{tex_open/titre.tex}				%% page de titre
+										
+	\input{tex_open/affidavit}				%% affidavit et licence
+
+    \input{tex_open/thanks.tex}				%% page de titre
+     
+    \input{tex_open/publications}			%% liste de publications et participation aux conférences
+
+    \input{tex_open/resume}					%% résumé
+    
+    \input{tex_open/abstract}				%% abstract
+    
+	
+
+	\input{tex_open/remercie}				%% remerciements
+
+    \microtypesetup{protrusion=false}	%% désactive la protrusion (TOC LOFT GLS)
+	\tableofcontents					%% TOC
+	\listoffigures						%% LOF
+	%\listoftables						%% LOT
+	\printglossary[						%% acronymes
+		type=\acronymtype,
+		title={List of acronyms},
+		toctitle={List of acronyms}
+		]
+	\printglossary[						%% glossaire
+		title={Glossary},
+		toctitle={Glossary}
+		]
+	\printglossary[						%% nomenclature
+		type=notation,
+		title={Nomenclature},
+		toctitle={Nomenclature}
+		]
+    \microtypesetup{protrusion=true}	%% rétabli la protrusion
+
+	\ohead{\leftmark\Ifstr{\rightmark}{\leftmark}{}{ -- \rightmark}}	%% place le chapître et la partie en en-tête
+
+	\input{tex_body/intro}
+
+	\input{tex_body/chap_bigintro}
+
+	\input{tex_body/chap_sporco}
+
+	\input{tex_body/chap_obv1}
+
+        %\input{tex_body/chap_pc}
+
+        \input{tex_body/chap_papale}
+
+        \input{tex_body/chap_pulvinar}
+
+	\input{tex_body/conc}
+
+	\appendix
+
+	\newpage
+	\printbibliography[heading=bibintoc]%% bibliographie
+	
+	\newpage
+	\printindex							%% index
+	
+	\newpage
+	\printendnotes						%% notes
+
+	\input{tex_append/annexes}			%% annexes
+
+\end{document}

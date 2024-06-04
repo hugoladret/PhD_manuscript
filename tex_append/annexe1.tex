@@ -1,0 +1,489 @@
+\section{Appendix A: Additional Equations} 
+\begin{flushright}
+    \textit{''I'm not a gentleman,\\
+    I'm the (Material and) Method man.''}\\
+    approximate quote from Wu-Tang Clan's Method Man, The What, 1994
+\end{flushright}
+\label{appendix_maths}
+
+\subsection{Equation 2.9}
+The full differentiation of $F$ over $\Phi$ serves no introductory purpose, and is thus left out of Chapter 2 - equation \ref{eq_dF_dPhi}. It is written here, as: 
+
+$$ \frac{\delta F}{\delta \Phi} = 
+\frac{1}{2} \left(
+\frac{\delta}{\delta \Phi}     \left(-\frac{(u - g(\Phi))^2}{\Sigma_u}\right) +
+\frac{\delta}{\delta \Phi}     \left(-\frac{(\Phi - v_p)^2}{\Sigma_p}\right) + 
+\frac{\delta}{\delta \Phi}      \left( -\ln\Sigma_u \right) + 
+\frac{\delta}{\delta \Phi}      \left( -\ln\Sigma_p \right) + 
+\frac{\delta}{\delta \Phi}      C
+\right)
+$$
+
+$$ = 
+\frac{1}{2} \left(
+\left( -\frac{1}{\Sigma_u} \frac{\delta}{\delta \Phi} (u-g(\Phi))^2) \right) +
+\left( -\frac{1}{\Sigma_p} \frac{\delta}{\delta \Phi} (\Phi-v_p)^2 \right)
+\right)
+$$
+
+Applying the power rule $(f(x)^n)' = n f(x)^{n-1} f'(x)$:
+$$ = 
+\frac{1}{2} \left(
+\left( -\frac{1}{\Sigma_u} 2(u-g(\Phi))\frac{\delta}{\delta \Phi} (u-g(\Phi)) \right) +
+\left( -\frac{1}{\Sigma_p} 2(\Phi-v_p) \frac{\delta}{\delta \Phi} (\Phi-v_p) \right)
+\right)
+$$
+
+And then splitting the linear differentiation:
+$$ = 
+\frac{1}{2} \left(
+\left( -\frac{1}{\Sigma_u} 2(u-g(\Phi)) \left(\frac{\delta}{\delta \Phi} u - \frac{\delta}{\delta \Phi} g(\Phi)\right) \right) +
+\left( -\frac{1}{\Sigma_p} 2(\Phi-v_p) \left(\frac{\delta}{\delta \Phi} \Phi - \frac{\delta}{\delta \Phi} v_p \right)\right)
+\right)
+$$
+
+$$ = 
+\frac{1}{2} \left(
+\left( -\frac{1}{\Sigma_u} 2(u-g(\Phi)) \left(0 - g'(\Phi)\right) \right) +
+\left( -\frac{1}{\Sigma_p} 2(\Phi-v_p) (1+0) \right)
+\right)
+$$
+
+$$ = 
+\frac{1}{2} \left(
+\left( -\frac{1}{\Sigma_u} 2(u-g(\Phi))(-g'(\Phi)) \right) +
+\left( -\frac{1}{\Sigma_p} 2(\Phi-v_p) \right)
+\right)
+$$
+
+$$ = 
+\left( \frac{1}{\Sigma_u} (u-g(\Phi))(g'(\Phi)) \right) +
+\left( -\frac{1}{\Sigma_p} (\Phi-v_p) \right)
+$$
+
+Simplifying and changing the order of the right-hand side term, we get:
+$$ F = 
+\frac{(u-g(\Phi))}{\Sigma_u} g'(\Phi)   +
+\frac{(v_p-\Phi)}{\Sigma_p}  
+$$
+
+yielding equation \ref{eq_dF_dPhi}. 
+
+
+
+\newpage 
+\subsection{Equation 2.25}
+For differentiating the terms $v_p, \Sigma_u \Sigma_p$ over $F$ for Equation \ref{eq_df_derror}, we start from the definition of $F$ as:
+$$ F = \frac{1}{2} \left( - \ln \Sigma_p - \frac{(\Phi - v_p)^2}{\Sigma_p}  - \ln \Sigma_u - \frac{(u - g(\Phi))^2}{\Sigma_u}\right) + C$$
+
+We will derive first for $v_p$:
+$$ \frac{\delta F}{\delta v_p} =
+\frac{1}{2} \left(
+\frac{\delta}{\delta v_p} \left( - \frac{(\Phi - v_p)^2}{\Sigma_p} \right) +
+\frac{\delta}{\delta v_p} \left( - \frac{(u - g(\Phi))^2}{\Sigma_u} \right) +
+\frac{\delta}{\delta v_p} \left( - \ln \Sigma_u  \right) + 
+\frac{\delta}{\delta v_p} \left( - \ln \Sigma_p  \right) + 
+\right)
+\frac{\delta}{\delta v_p} C
+$$
+$$ 
+ = \frac{1}{2} \left(
+\frac{\delta}{\delta v_p} \left( - \frac{(\Phi - v_p)^2}{\Sigma_p} \right) 
+\right)
+$$
+$$ 
+ = \frac{1}{2} \left(
+\frac{1}{-\Sigma_p}
+\frac{\delta}{\delta v_p} (\Phi - v_p)^2
+\right)
+$$
+
+Using the power rule to eliminate both halved and squared terms:
+$$ 
+= 
+\frac{1}{-\Sigma_p}
+(\Phi - v_p)
+\frac{\delta}{\delta v_p} (\Phi - v_p)
+$$
+$$ 
+= 
+\frac{1}{-\Sigma_p}
+(\Phi - v_p)
+\left(\frac{\delta}{\delta v_p} \Phi -
+\frac{\delta}{\delta v_p} v_p\right)
+$$
+$$ 
+= 
+\frac{1}{-\Sigma_p}
+(\Phi - v_p)
+(0 -
+1)
+$$
+
+$$ 
+= \frac{\Phi - v_p}{\Sigma_p}
+$$
+
+Now once again, for $\Sigma_p$
+$$ F = \frac{1}{2} \left( - \ln \Sigma_p - \frac{(\Phi - v_p)^2}{\Sigma_p}  - \ln \Sigma_u - \frac{(u - g(\Phi))^2}{\Sigma_u}\right) + C$$
+$$  \frac{\delta F }{\delta \Sigma_p} = 
+\frac{1}{2} \left(
+\frac{\delta}{\delta \Sigma_p} \left( - \frac{(\Phi - v_p)^2}{\Sigma_p} \right) +
+\frac{\delta}{\delta \Sigma_p} \left( - \frac{(u - g(\Phi))^2}{\Sigma_u} \right) +
+\frac{\delta}{\delta \Sigma_p} \left( - \ln \Sigma_u  \right) + 
+\frac{\delta}{\delta \Sigma_p} \left( - \ln \Sigma_p  \right)  
+\right) +
+\frac{\delta}{\delta \Sigma_p} C
+$$
+$$  = 
+\frac{1}{2} \left(
+- \frac{\delta}{\delta \Sigma_p} \ln \Sigma_p +
+\left( - (\Phi - v_p)^2
+\frac{\delta}{\delta \Sigma_p} \frac{1}{\Sigma_p} \right) 
+\right)
+$$
+Applying $ \left(\frac{1}{f(x)}\right)' = - \frac{f'(x)}{f(x)^2} $, this becomes 
+$$  = 
+\frac{1}{2} \left(
+- \frac{1}{\Sigma_p} +
+\left(  (\Phi - v_p)^2
+\frac{\frac{\delta}{\delta \Sigma_p} \Sigma_p}{\Sigma_p^2} \right) 
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+(\Phi - v_p)^2
+\frac{\frac{\delta}{\delta \Sigma_p} \Sigma_p}{\Sigma_p^2} 
+- \frac{1}{\Sigma_p}
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+\frac{1(\Phi - v_p)^2}{\Sigma_p^2} 
+- \frac{1}{\Sigma_p}
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+\frac{(\Phi - v_p)^2}{\Sigma_p^2} 
+- \frac{1}{\Sigma_p}
+\right)
+$$
+
+The same is done for $\Sigma_u$: 
+$$ F = \frac{1}{2} \left( - \ln \Sigma_p - \frac{(\Phi - v_p)^2}{\Sigma_p}  - \ln \Sigma_u - \frac{(u - g(\Phi))^2}{\Sigma_u}\right) + C$$
+$$  \frac{\delta F }{\delta \Sigma_u} = 
+\frac{1}{2} \left(
+\frac{\delta}{\delta \Sigma_u} \left( - \frac{(\Phi - v_p)^2}{\Sigma_p} \right) +
+\frac{\delta}{\delta \Sigma_u} \left( - \frac{(u - g(\Phi))^2}{\Sigma_u} \right) +
+\frac{\delta}{\delta \Sigma_u} \left( - \ln \Sigma_u  \right) + 
+\frac{\delta}{\delta \Sigma_u} \left( - \ln \Sigma_p  \right)  
+\right) +
+\frac{\delta}{\delta \Sigma_u} C
+$$
+$$  = 
+\frac{1}{2} \left(
+\frac{\delta}{\delta \Sigma_u} \left( - \frac{(u - g(\Phi))^2}{\Sigma_u} \right) -
+\frac{\delta}{\delta \Sigma_u}   \ln \Sigma_u   
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+-(u - g(\Phi))^2 \frac{\delta}{\delta \Sigma_u}\frac{1}{\Sigma_u} -
+\frac{\delta}{\delta \Sigma_u}   \ln \Sigma_u   
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+-(u - g(\Phi))^2 \frac{\delta}{\delta \Sigma_u}\frac{1}{\Sigma_u} -
+\frac{1}{ \Sigma_u}
+\right)
+$$
+Once more, using $ \left(\frac{1}{f(x)}\right)' = - \frac{f'(x)}{f(x)^2} $, we get
+$$  = 
+\frac{1}{2} \left(
+(u - g(\Phi))^2 \frac{\frac{\delta}{\delta \Sigma_u} \Sigma_u}{\Sigma_u^2} -
+\frac{1}{ \Sigma_u}
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+ \frac{(u - g(\Phi))^2}{\Sigma_u^2} -
+\frac{1}{ \Sigma_u}
+\right)
+$$
+$$  = 
+\frac{1}{2} \left(
+\frac{(u - g(\Phi))^2}{\Sigma_u^2} -
+\frac{1}{ \Sigma_u}
+\right)
+$$
+
+yielding all three equations \ref{eq_df_derror}.
+
+\newpage 
+\subsection{Equation 2.28}
+For moving from the scalar to the matrix form of a predictive network, as done in Equation~\ref{eq_pc_matrix}, we increase the dimensionality of our toy model organism, which now has observed sensory input $\bar{u}$ and tries to estimate the most likely values $\bar{\Phi}$ of the variables $\bar{v}$. As before, this model has prior expectations that $\bar{v}$ comes from the multivariate normal distribution with mean $\bar{v_p}$ and covariance matrix $\mathbf{\Sigma_p}$. Thus:
+$$
+f(\bar{x}, \bar{\mu}, \boldsymbol{\Sigma}) = 
+\frac{1}{\sqrt{(2\pi)^N|\boldsymbol{\Sigma}|}}
+exp \left[ -\frac{1}{2} (\bar{x} - \bar{\mu})^T \boldsymbol{\Sigma}^{-1}  (\bar{x} - \bar{\mu}) \right]
+$$
+where $N$ is the length of the vector $\bar{x}$ and $|\Sigma|$ is the determinant of the matrix $\Sigma$. Hence we have:
+$$
+p(\bar{u} | \bar{v}) = f(\bar{u}; g(\bar{v}, \boldsymbol{\Theta}), \boldsymbol{\Sigma_u})
+$$
+where $\mathbf{\Theta}$ are the parameters of the function g.
+
+Now we can write down the free energy $F$ as:
+\begin{equation*}
+    \begin{aligned}
+        F &= \ln p(\bar{\phi}) + \ln p(\bar{u} | \bar{\phi}) \\
+        &= \ln 
+\left[
+\frac{1}{\sqrt{(2\pi)^N|\boldsymbol{\Sigma_p}|}}
+exp \left[ -\frac{1}{2} (\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) \right]
+\right] \\
+&+
+\ln 
+\left[ 
+\frac{1}{\sqrt{(2\pi)^N|\boldsymbol{\Sigma_u}|}}
+exp \left[ -\frac{1}{2} (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta})) \right]
+\right]
+    \end{aligned}
+\end{equation*}
+
+$\frac{1}{\sqrt{(2\pi)^N}}$ is a constant, which we group under a constant $C$ term:
+
+\begin{equation*} % ptdr l'enfer a relire
+    \begin{aligned}
+        F &= \frac{1}{2}
+        \left[
+        \ln \left(
+        \frac{1}{|\boldsymbol{\Sigma_p}|}
+        exp  \left( -(\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) \right)
+        \right) \right] \\
+        &+
+        \frac{1}{2}
+        \left[
+        \ln \left(
+        \frac{1}{|\boldsymbol{\Sigma_u}|}
+        exp  \left( -\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}) \right)
+        \right)
+        \right]
+        +C \\ \\
+        &= \frac{1}{2}
+        \left[
+        \ln \left(
+        \frac{1}{|\boldsymbol{\Sigma_p}|} \right)
+        +
+        \ln \left( exp  \left( -(\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) \right) \right) \right]\\
+        &+
+        \frac{1}{2}
+        \left[
+        \ln \left(
+        \frac{1}{|\boldsymbol{\Sigma_u}|} \right)
+        +
+        \ln \left( exp  \left( -\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}) \right) \right)
+        \right]
+        +C \\ \\
+        &=
+        \frac{1}{2}
+            \left[
+            - \ln (|\boldsymbol{\Sigma_p}|) -
+            (\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) -
+            \ln (-|\boldsymbol{\Sigma_u}|) -
+            (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+            \right]
+        \\&+C
+    \end{aligned}
+\end{equation*}
+
+As we will now express everything in matrix term, it is useful to remember some properties, such as the gradient on vectors:
+$$
+\bar{x} = 
+\begin{bmatrix} x_1 \\ x_1 \end{bmatrix}
+$$
+if $ y = \bar{x}^T\bar{x} = x_1^2+x_2^2$ by construction, so the gradient becomes
+$$
+\frac{\delta y}{\delta \bar{x}} =
+\begin{bmatrix} \frac{\delta y}{\delta x_1} \\ \frac{\delta y}{\delta x_2} \end{bmatrix} =
+\begin{bmatrix} 2x_1 \\ 2x_2 \end{bmatrix} =
+2\bar{x}
+$$
+
+Knowing that $\Sigma$ matrices are symmetric (because they are covariance matrices), we can now compute the gradient of:
+$$
+F = \frac{1}{2}
+\left[
+- \ln (|\boldsymbol{\Sigma_p}|) -
+(\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) -
+\ln (-|\boldsymbol{\Sigma_u}|) -
+(\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+\right]
++C
+$$
+which is:
+\begin{equation*}
+    \begin{aligned}
+        \frac{\delta F}{\delta \bar{\phi}} &=
+        \frac{1}{2}
+        \left[
+        - \frac{\delta F}{\delta \bar{\phi}} \ln (|\boldsymbol{\Sigma_p}|) -
+        \frac{\delta F}{\delta \bar{\phi}}(\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) \right] \\
+        &-
+        \frac{1}{2}
+        \left[
+        \frac{\delta F}{\delta \bar{\phi}}\ln (-|\boldsymbol{\Sigma_u}|) -
+        \frac{\delta F}{\delta \bar{\phi}}(\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+        \right]\\
+        &+ \frac{\delta F}{\delta \bar{\Phi}}C \\ \\
+        &=
+        \frac{1}{2}
+        \left[-
+        \frac{\delta F}{\delta \bar{\phi}}(\bar{\phi} - \bar{v_p})^T \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) +
+        \frac{\delta F}{\delta \bar{\phi}}(\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+        \right]
+    \end{aligned}
+\end{equation*}
+We can use the rule that $\delta ax^2 / \delta x = 2ax$ to change this form into:
+$$
+\frac{\delta F}{\delta \bar{\phi}} =
+\frac{1}{2}
+\left[-
+2 \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) +
+\frac{\delta F}{\delta \bar{\phi}}(\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))^T \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+\right]
+$$
+and same for the right term for second rule where $z = F, \bar{x} = \bar{\phi}, \bar{y} = \bar{g}$:
+$$
+\frac{\delta F}{\delta \bar{\phi}} =
+\frac{1}{2}
+\left[-
+2 \boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) +
+2\frac{\delta g(\bar{\phi}, \boldsymbol{\Theta})^T}{\delta \bar{\phi}}\boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+\right]
+$$
+
+$$
+\frac{\delta F}{\delta \bar{\phi}} =
+-
+\boldsymbol{\Sigma_p}^{-1}  (\bar{\phi} - \bar{v_p}) +
+\frac{\delta g(\bar{\phi}, \boldsymbol{\Theta})^T}{\delta \bar{\phi}}\boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta}))
+$$
+
+As previously, we can change terms so the prediction errors simplify the expression:
+$$
+\bar{\epsilon_p} = \boldsymbol{\Sigma_p}^{-1}(\bar{\phi}-\bar{v_p})
+$$
+$$
+\bar{\epsilon_u} = \boldsymbol{\Sigma_u}^{-1}  (\bar{u} - g(\bar{\phi}, \boldsymbol{\Theta})
+$$
+
+Then the gradient becomes 
+$$
+\dot{\phi} = - \bar{\epsilon_p} + \frac{\delta g(\bar{\phi}, \boldsymbol{\Theta})^T}{\delta \bar{\phi}} \bar{\epsilon_u}
+$$
+
+Note that $\frac{\delta g(\bar{\phi}, \boldsymbol{\Theta})^T}{\delta \bar{\phi}}$ is a matrix that contains the partial derivative of the element $i$ of $g(\bar{\phi}, \boldsymbol{\Theta})$ over $\phi_j$, i.e. each element is the derivative with a specific parameter theta. For a 2D stimulation, we can then write this as: 
+$$
+\frac{\delta g(\bar{\phi}, \boldsymbol{\Theta})}{\delta \bar{\phi}} = 
+\begin{bmatrix}
+    \theta_{1,1}h'(\phi_1) & \theta_{1,2}h'(\phi_2) \\
+    \theta_{2,1}h'(\phi_1) & \theta_{2,2}h'(\phi_2) 
+  \end{bmatrix}
+$$
+
+so 
+$$
+\dot{\phi} = - \bar{\epsilon_p} + \frac{\delta g(\bar{\phi}, \boldsymbol{\Theta})^T}{\delta \bar{\phi}} \bar{\epsilon_u}
+= - \bar{\epsilon_p} + h'(\bar{\phi}) \times \boldsymbol{\Theta}^T \bar{\epsilon_u}
+$$
+where $\times$ is a element-wise multiplication. The gradient on the nodes become
+$$
+\dot{\epsilon_p} = \bar{\phi} - \bar{v_p} - \boldsymbol{\Sigma_p}\bar{\epsilon_p}
+$$
+$$
+\dot{\epsilon_u} = \bar{u} - \boldsymbol{\Theta}h(\bar{\phi}) - \boldsymbol{\Sigma_u}\bar{\epsilon_u}
+$$
+
+once more, as done in the previous section of this Appendix, one can derive for parameters $\bar{v_p}, \boldsymbol{\Sigma_p},  \boldsymbol{\Sigma_u}$ to find the expressions:
+
+$$
+\frac{\delta F}{\delta \bar{v_p}} =
+\bar{\epsilon_p}
+$$
+$$
+\frac{\delta F}{\delta \boldsymbol{\Sigma_p}} =
+\frac{1}{2}(\bar{\epsilon_p}\bar{\epsilon_p}^T - \boldsymbol{\Sigma_p^{-1}})
+$$
+$$
+\frac{\delta F}{\delta \boldsymbol{\Sigma_u}} =
+\frac{1}{2}(\bar{\epsilon_u}\bar{\epsilon_u}^T - \boldsymbol{\Sigma_u^{-1}})
+$$
+
+which are the expression given in Equation~\ref{eq_pc_matrix}.
+
+The logic behind the addition of an inhibitory neuron to make computation Hebbian again is the following. A single prediction error must converge to: 
+
+\begin{equation*}
+\epsilon_p = \frac{\Phi - v_p}{\Sigma_p}
+\end{equation*}
+
+Where the mean expected level of a feature $\Phi$ varies with $\Sigma_p$: 
+
+\begin{equation*}
+\Sigma_p = \left<(\Phi - v_p)^2)\right>
+\end{equation*}
+
+Adding an inhibitory node or neuron yields:
+
+\begin{equation*}
+    \begin{aligned}
+        \dot{\epsilon_p} &= \bar{u} - g(\bar{\phi}) - e_p \\
+        \dot{e_p} &= \Sigma_p\epsilon_p - e_p
+    \end{aligned}
+\end{equation*}
+
+By setting the desired value to 0, we get a fixed point at the desired value:
+
+\begin{equation*}
+    \begin{aligned}
+\varepsilon_p &= \frac{\Phi - v_p}{\varSigma_p} \\
+e_p &= \Phi - v_p
+    \end{aligned}
+\end{equation*}
+
+For matrix form, the idea is the same as in the previous section of the appendix, where we work with a variance matrix instead of a scalar value:
+
+\begin{equation*}
+    \begin{aligned}
+\dot{\bar{\varepsilon}}_p &= \bar{\phi}_p - g(\bar{\phi}_{i+1}) - \bar{e}_p  \\
+\dot{\bar{e}}_p &= \mathbf{\Sigma_p} \bar{\varepsilon}_p - \bar{e}_p 
+    \end{aligned}
+\end{equation*}
+
+As before, we can find the fixed point by setting these variables to 0:
+
+\begin{equation*}
+    \begin{aligned}
+\bar{\varepsilon}_p &= \mathbf{\Sigma_p}^{-1} \bar{\phi}_p - g_p(\bar{\phi}_{i+1})  \\
+\bar{e}_p &= \bar{\phi}_p - g_p(\bar{\phi}_{i+1})
+    \end{aligned}
+\end{equation*}
+
+Thus we can see that nodes $\varepsilon$ have fixed points at the values equal to the prediction errors. We can now consider a learning rule analogous to that in the previous subsection: 
+
+\begin{equation*}
+    \begin{aligned}
+\Delta \mathbf{\Sigma}_p = \alpha(\bar{\varepsilon}_p \bar{e}_p^T - 1). 
+    \end{aligned}
+\end{equation*}
+
+To find the values to vicinity of which the above rule may converge, we can find the value of $\mathbf{\Sigma}_p$ for which the expected value of the right-hand side of the above equation is equal to $0$: 
+
+\begin{equation*}
+    \begin{aligned}
+\left<\bar{\varepsilon}_p \bar{e}_p^T - 1 \right> = 0.
+    \end{aligned}
+\end{equation*}
